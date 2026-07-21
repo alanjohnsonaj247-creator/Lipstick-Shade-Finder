@@ -38,6 +38,7 @@ export function useFaceLandmarks(
   const frameCountRef = useRef<number>(0);
   const fpsTimerRef = useRef<number>(0);
   const isRunningRef = useRef<boolean>(false);
+  const smoothedLandmarksRef = useRef<NormalizedLandmark[] | null>(null);
 
   const runLoop = useCallback(() => {
     if (!isRunningRef.current) return;
@@ -58,12 +59,35 @@ export function useFaceLandmarks(
 
     try {
       const result = detectLandmarks(landmarkerRef.current, video, now);
-      const lips = getLipLandmarks(result);
+      const rawLips = getLipLandmarks(result);
+
+      let nextLips = rawLips;
+      if (rawLips) {
+        if (!smoothedLandmarksRef.current) {
+          smoothedLandmarksRef.current = rawLips;
+        } else {
+          nextLips = rawLips.map((lm, index) => {
+            const prev = smoothedLandmarksRef.current?.[index];
+            if (!prev) return lm;
+            const alpha = 0.35;
+            return {
+              x: prev.x + (lm.x - prev.x) * alpha,
+              y: prev.y + (lm.y - prev.y) * alpha,
+              z: prev.z !== undefined && lm.z !== undefined
+                ? prev.z + (lm.z - prev.z) * alpha
+                : undefined,
+            } as NormalizedLandmark;
+          });
+        }
+        smoothedLandmarksRef.current = nextLips;
+      } else {
+        smoothedLandmarksRef.current = null;
+      }
 
       setState((s) => ({
         ...s,
-        landmarks: lips,
-        faceDetected: !!lips,
+        landmarks: nextLips,
+        faceDetected: !!nextLips,
       }));
     } catch {
       // Ignore per-frame errors silently
@@ -84,6 +108,7 @@ export function useFaceLandmarks(
     if (!enabled) {
       isRunningRef.current = false;
       cancelAnimationFrame(rafRef.current);
+      smoothedLandmarksRef.current = null;
       return;
     }
 
