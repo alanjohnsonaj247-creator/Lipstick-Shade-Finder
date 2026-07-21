@@ -1,7 +1,17 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Sparkles, Shield, Zap, Camera, ShoppingBag, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Shade Finder — Virtual Lipstick Try-On | See It On You Before You Buy",
+  description:
+    "Try on 60+ lipstick shades from MAC, NARS, Charlotte Tilbury, and more — live on your face using your browser's camera. No download required.",
+  openGraph: {
+    title: "Shade Finder — Virtual Lipstick Try-On",
+    description: "Try any lipstick shade live on your face. Powered by AI face tracking.",
+    type: "website",
+  },
+};
 
 const FEATURES = [
   {
@@ -190,7 +200,7 @@ export default function LandingPage() {
           © 2024 Shade Finder · Built with MediaPipe AI · All face data processed locally
         </p>
         <div className="footer-links">
-          <a href="#privacy" className="footer-privacy-link" id="footer-privacy-btn">Privacy</a>
+          <button onClick={() => {}} id="footer-privacy-btn">Privacy</button>
           <Link href="/try-on" id="footer-tryon-link">Try-On App</Link>
         </div>
       </footer>

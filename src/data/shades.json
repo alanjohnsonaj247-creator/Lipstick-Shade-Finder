@@ -1,0 +1,588 @@
+[
+  {
+    "shadeId": "red-001",
+    "name": "Classic Red",
+    "hexColor": "#C0392B",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "reds",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Ruby Woo", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" },
+      { "brandName": "NARS", "productName": "Dragon Girl", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "red-002",
+    "name": "Cherry Bomb",
+    "hexColor": "#A93226",
+    "finish": "glossy",
+    "undertone": "cool",
+    "colorFamily": "reds",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "Charlotte Tilbury", "productName": "Red Hot Red", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" },
+      { "brandName": "Dior", "productName": "999 Rouge", "price": 42, "currency": "USD", "buyUrl": "https://www.dior.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "red-003",
+    "name": "Crimson Kiss",
+    "hexColor": "#B03A2E",
+    "finish": "satin",
+    "undertone": "neutral",
+    "colorFamily": "reds",
+    "occasion": ["bold", "bridal"],
+    "brands": [
+      { "brandName": "YSL Beauty", "productName": "Le Rouge 01", "price": 44, "currency": "USD", "buyUrl": "https://www.yslbeauty.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "red-004",
+    "name": "Scarlet Woman",
+    "hexColor": "#E74C3C",
+    "finish": "matte",
+    "undertone": "warm",
+    "colorFamily": "reds",
+    "occasion": ["bold"],
+    "brands": [
+      { "brandName": "L'Oreal", "productName": "Rouge Signature 7", "price": 12, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" },
+      { "brandName": "Maybelline", "productName": "SuperStay Icon", "price": 9, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "red-005",
+    "name": "Venetian Red",
+    "hexColor": "#922B21",
+    "finish": "sheer",
+    "undertone": "cool",
+    "colorFamily": "reds",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Bobbi Brown", "productName": "Rich Red Lip Gloss", "price": 30, "currency": "USD", "buyUrl": "https://www.bobbibrown.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-001",
+    "name": "Bubblegum Pop",
+    "hexColor": "#E91E8C",
+    "finish": "glossy",
+    "undertone": "cool",
+    "colorFamily": "pinks",
+    "occasion": ["bold", "everyday"],
+    "brands": [
+      { "brandName": "Fenty Beauty", "productName": "Stunna Lip Paint Uncensored", "price": 25, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" },
+      { "brandName": "Too Faced", "productName": "Lady Bold Fuschia", "price": 22, "currency": "USD", "buyUrl": "https://www.toofaced.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-002",
+    "name": "Millennial Pink",
+    "hexColor": "#F4A7B9",
+    "finish": "satin",
+    "undertone": "neutral",
+    "colorFamily": "pinks",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Glossier", "productName": "Ultralip Petal", "price": 18, "currency": "USD", "buyUrl": "https://www.glossier.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-003",
+    "name": "Rose Quartz",
+    "hexColor": "#E8A0BF",
+    "finish": "sheer",
+    "undertone": "cool",
+    "colorFamily": "pinks",
+    "occasion": ["everyday", "bridal"],
+    "brands": [
+      { "brandName": "Charlotte Tilbury", "productName": "Pillow Talk", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" },
+      { "brandName": "NARS", "productName": "Dolce Vita", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-004",
+    "name": "Hot Coral",
+    "hexColor": "#FF6B6B",
+    "finish": "matte",
+    "undertone": "warm",
+    "colorFamily": "pinks",
+    "occasion": ["everyday", "bold"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Lady Danger", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-005",
+    "name": "Ballet Slipper",
+    "hexColor": "#F5CBA7",
+    "finish": "sheer",
+    "undertone": "warm",
+    "colorFamily": "pinks",
+    "occasion": ["everyday", "bridal"],
+    "brands": [
+      { "brandName": "Bobbi Brown", "productName": "Pale Pink Luxe Lip Color", "price": 30, "currency": "USD", "buyUrl": "https://www.bobbibrown.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-006",
+    "name": "Fuchsia Fever",
+    "hexColor": "#C0175D",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "pinks",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "Urban Decay", "productName": "Vice Lip Bond Disturbed", "price": 27, "currency": "USD", "buyUrl": "https://www.urbandecay.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-001",
+    "name": "Your Skin But Better",
+    "hexColor": "#C68642",
+    "finish": "satin",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Charlotte Tilbury", "productName": "Pillow Talk Medium", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" },
+      { "brandName": "Fenty Beauty", "productName": "Stunna Uncuffed", "price": 25, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-002",
+    "name": "Barely There",
+    "hexColor": "#D4A574",
+    "finish": "sheer",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Glossier", "productName": "Ultralip Frenchie", "price": 18, "currency": "USD", "buyUrl": "https://www.glossier.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-003",
+    "name": "Golden Hour",
+    "hexColor": "#C8956C",
+    "finish": "glossy",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday", "bridal"],
+    "brands": [
+      { "brandName": "Urban Decay", "productName": "Vice 17 Naked", "price": 27, "currency": "USD", "buyUrl": "https://www.urbandecay.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-004",
+    "name": "Porcelain Doll",
+    "hexColor": "#F0D0B0",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "nudes",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "NARS", "productName": "Lipstick Honesty", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-005",
+    "name": "Caramel Latte",
+    "hexColor": "#B87333",
+    "finish": "satin",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Honeylove", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" },
+      { "brandName": "L'Oreal", "productName": "Colour Riche 235", "price": 10, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-006",
+    "name": "Mocha Dream",
+    "hexColor": "#8B5E3C",
+    "finish": "matte",
+    "undertone": "neutral",
+    "colorFamily": "nudes",
+    "occasion": ["everyday", "evening"],
+    "brands": [
+      { "brandName": "Kylie Cosmetics", "productName": "Mocha Matte Lip Kit", "price": 29, "currency": "USD", "buyUrl": "https://www.kyliecosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-001",
+    "name": "Plum Perfect",
+    "hexColor": "#6C3483",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Cyber", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" },
+      { "brandName": "NARS", "productName": "Train Bleu", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-002",
+    "name": "Wine Not",
+    "hexColor": "#7D2248",
+    "finish": "satin",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["evening", "bold"],
+    "brands": [
+      { "brandName": "YSL Beauty", "productName": "Le Rouge 72 Red Vinyle", "price": 44, "currency": "USD", "buyUrl": "https://www.yslbeauty.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-003",
+    "name": "Mulberry Lane",
+    "hexColor": "#9B2D5A",
+    "finish": "glossy",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["everyday", "evening"],
+    "brands": [
+      { "brandName": "Dior", "productName": "Addict Lip 720 Icône", "price": 42, "currency": "USD", "buyUrl": "https://www.dior.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-004",
+    "name": "Blackberry Jam",
+    "hexColor": "#4A235A",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "Urban Decay", "productName": "Vice 714 Blackheart", "price": 27, "currency": "USD", "buyUrl": "https://www.urbandecay.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-005",
+    "name": "Raspberry Sorbet",
+    "hexColor": "#C0392B",
+    "finish": "sheer",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Clinique", "productName": "Dramatically Different Raspberry Glaze", "price": 20, "currency": "USD", "buyUrl": "https://www.clinique.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-006",
+    "name": "Grape Escape",
+    "hexColor": "#884EA0",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["bold"],
+    "brands": [
+      { "brandName": "Fenty Beauty", "productName": "Stunna Underdawg", "price": 25, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-001",
+    "name": "Chestnut",
+    "hexColor": "#7B3F00",
+    "finish": "matte",
+    "undertone": "warm",
+    "colorFamily": "browns",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Antique Velvet", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" },
+      { "brandName": "Kylie Cosmetics", "productName": "Spice Matte Lip Kit", "price": 29, "currency": "USD", "buyUrl": "https://www.kyliecosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-002",
+    "name": "Terracotta",
+    "hexColor": "#C35A38",
+    "finish": "satin",
+    "undertone": "warm",
+    "colorFamily": "browns",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Charlotte Tilbury", "productName": "Hepburn Honey", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-003",
+    "name": "Spiced Cider",
+    "hexColor": "#9C4A1A",
+    "finish": "glossy",
+    "undertone": "warm",
+    "colorFamily": "browns",
+    "occasion": ["everyday", "evening"],
+    "brands": [
+      { "brandName": "NYX Professional", "productName": "Butter Gloss Ginger Snap", "price": 8, "currency": "USD", "buyUrl": "https://www.nyxcosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-004",
+    "name": "Cocoa Butter",
+    "hexColor": "#6B3A2A",
+    "finish": "matte",
+    "undertone": "warm",
+    "colorFamily": "browns",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Bobbi Brown", "productName": "Brownie Luxe Lip Color", "price": 30, "currency": "USD", "buyUrl": "https://www.bobbibrown.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-005",
+    "name": "Hazel Haze",
+    "hexColor": "#A0522D",
+    "finish": "sheer",
+    "undertone": "warm",
+    "colorFamily": "browns",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "L'Oreal", "productName": "Colour Riche Nude 630", "price": 10, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-006",
+    "name": "Café Au Lait",
+    "hexColor": "#8B4513",
+    "finish": "satin",
+    "undertone": "neutral",
+    "colorFamily": "browns",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "NARS", "productName": "Intrigue", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "purple-001",
+    "name": "Amethyst Dreams",
+    "hexColor": "#7D3C98",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "purples",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "Urban Decay", "productName": "Vice Lip Bond Venom", "price": 27, "currency": "USD", "buyUrl": "https://www.urbandecay.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "purple-002",
+    "name": "Lavender Haze",
+    "hexColor": "#BB8FCE",
+    "finish": "sheer",
+    "undertone": "cool",
+    "colorFamily": "purples",
+    "occasion": ["everyday", "bold"],
+    "brands": [
+      { "brandName": "Fenty Beauty", "productName": "Gloss Bomb Fairy Bomb", "price": 20, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "purple-003",
+    "name": "Midnight Orchid",
+    "hexColor": "#4A235A",
+    "finish": "glossy",
+    "undertone": "cool",
+    "colorFamily": "purples",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Heroine Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "purple-004",
+    "name": "Wisteria",
+    "hexColor": "#9B59B6",
+    "finish": "satin",
+    "undertone": "cool",
+    "colorFamily": "purples",
+    "occasion": ["bold"],
+    "brands": [
+      { "brandName": "Charlotte Tilbury", "productName": "Glastonberry Walk of Shame", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "coral-001",
+    "name": "Sunset Coral",
+    "hexColor": "#FF7043",
+    "finish": "glossy",
+    "undertone": "warm",
+    "colorFamily": "pinks",
+    "occasion": ["everyday", "bold"],
+    "brands": [
+      { "brandName": "Clinique", "productName": "Pop Lip Colour Coral Pop", "price": 20, "currency": "USD", "buyUrl": "https://www.clinique.com", "imageUrl": "" },
+      { "brandName": "L'Oreal", "productName": "Colour Riche Coral Blossom", "price": 10, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "coral-002",
+    "name": "Peach Fuzz",
+    "hexColor": "#FFAB91",
+    "finish": "sheer",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Bobbi Brown", "productName": "Pale Peach Lip Gloss", "price": 30, "currency": "USD", "buyUrl": "https://www.bobbibrown.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "mauve-001",
+    "name": "Dusty Rose",
+    "hexColor": "#C39BD3",
+    "finish": "satin",
+    "undertone": "cool",
+    "colorFamily": "pinks",
+    "occasion": ["everyday", "bridal"],
+    "brands": [
+      { "brandName": "Clinique", "productName": "Pop Lip Mauve Pop", "price": 20, "currency": "USD", "buyUrl": "https://www.clinique.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "mauve-002",
+    "name": "Mauve Mystique",
+    "hexColor": "#B39DDB",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "NYX Professional", "productName": "Soft Matte Lip Cream Stockholm", "price": 7, "currency": "USD", "buyUrl": "https://www.nyxcosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "mauve-003",
+    "name": "Antique Rose",
+    "hexColor": "#AC7D88",
+    "finish": "matte",
+    "undertone": "neutral",
+    "colorFamily": "berries",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Twig Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "red-006",
+    "name": "Tomato Red",
+    "hexColor": "#CB4335",
+    "finish": "glossy",
+    "undertone": "warm",
+    "colorFamily": "reds",
+    "occasion": ["everyday", "bold"],
+    "brands": [
+      { "brandName": "Maybelline", "productName": "Lifter Gloss Red Hot", "price": 9, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-007",
+    "name": "Petal Soft",
+    "hexColor": "#E8C9A0",
+    "finish": "glossy",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday", "bridal"],
+    "brands": [
+      { "brandName": "Dior", "productName": "Lip Glow 001 Pink", "price": 42, "currency": "USD", "buyUrl": "https://www.dior.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-007",
+    "name": "Sangria",
+    "hexColor": "#8E1A5A",
+    "finish": "satin",
+    "undertone": "cool",
+    "colorFamily": "berries",
+    "occasion": ["evening", "bold"],
+    "brands": [
+      { "brandName": "YSL Beauty", "productName": "Le Rouge Couture 66 Carmine", "price": 44, "currency": "USD", "buyUrl": "https://www.yslbeauty.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-007",
+    "name": "Toasted Almond",
+    "hexColor": "#BF8040",
+    "finish": "matte",
+    "undertone": "warm",
+    "colorFamily": "browns",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Kylie Cosmetics", "productName": "Maliboo Matte Lip Kit", "price": 29, "currency": "USD", "buyUrl": "https://www.kyliecosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-007",
+    "name": "Candy Floss",
+    "hexColor": "#FFB6C1",
+    "finish": "sheer",
+    "undertone": "neutral",
+    "colorFamily": "pinks",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "Glossier", "productName": "Lip Gloss Pink",  "price": 14, "currency": "USD", "buyUrl": "https://www.glossier.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "red-007",
+    "name": "Velvet Underground",
+    "hexColor": "#8B0000",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "reds",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "NARS", "productName": "Absolu Rouge Blood Lust", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "nude-008",
+    "name": "Cinnamon Spice",
+    "hexColor": "#B5651D",
+    "finish": "satin",
+    "undertone": "warm",
+    "colorFamily": "nudes",
+    "occasion": ["everyday"],
+    "brands": [
+      { "brandName": "MAC", "productName": "Kinda Sexy", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "berry-008",
+    "name": "Dark Iris",
+    "hexColor": "#5D2D91",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "purples",
+    "occasion": ["bold", "evening"],
+    "brands": [
+      { "brandName": "Urban Decay", "productName": "Vice Lip Color Junkie", "price": 27, "currency": "USD", "buyUrl": "https://www.urbandecay.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "pink-008",
+    "name": "Flamingo",
+    "hexColor": "#F4749B",
+    "finish": "glossy",
+    "undertone": "warm",
+    "colorFamily": "pinks",
+    "occasion": ["everyday", "bold"],
+    "brands": [
+      { "brandName": "Clinique", "productName": "Pop Lip Colour Flamingo Pop", "price": 20, "currency": "USD", "buyUrl": "https://www.clinique.com", "imageUrl": "" }
+    ]
+  },
+  {
+    "shadeId": "brown-008",
+    "name": "Fig",
+    "hexColor": "#59231E",
+    "finish": "matte",
+    "undertone": "cool",
+    "colorFamily": "browns",
+    "occasion": ["everyday", "evening"],
+    "brands": [
+      { "brandName": "Charlotte Tilbury", "productName": "Glastonberry Pillow Talk Deep", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" }
+    ]
+  }
+]
