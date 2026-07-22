@@ -32,6 +32,24 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#1A0A0F" />
+        {/* Suppress MediaPipe/TFLite WASM noise routed through console.error.
+            Must be an inline script so it runs before Next.js dev overlay wraps console.error. */}
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){
+  var _origErr = console.error.bind(console);
+  var SKIP = ["INFO:","WARNING:","W0","I0","Created TensorFlow","TfLite","XNNPACK"];
+  console.error = function() {
+    var msg = String(arguments[0] || "");
+    for(var i=0;i<SKIP.length;i++){ if(msg.indexOf(SKIP[i])===0) return; }
+    _origErr.apply(console, arguments);
+  };
+})();
+`,
+          }}
+        />
       </head>
       <body className="app-body">{children}</body>
     </html>

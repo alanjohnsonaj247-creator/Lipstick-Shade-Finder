@@ -3,7 +3,6 @@
 import React, { useRef, useState, useCallback, useEffect } from "react";
 import CameraView from "@/components/CameraView";
 import ShadeCarousel from "@/components/ShadeCarousel";
-import BrandMatchButton from "@/components/BrandMatchButton";
 import BrandMatchPanel from "@/components/BrandMatchPanel";
 import CompareView from "@/components/CompareView";
 import SnapshotButton from "@/components/SnapshotButton";
@@ -84,6 +83,19 @@ export default function TryOnPage() {
             <Upload size={18} />
           </button>
 
+          {/* Shop / brand info — only shown when a shade is selected */}
+          {selectedShade && (
+            <button
+              className={`tryon-ctrl-btn${brandPanelOpen ? " tryon-ctrl-btn--active" : ""}`}
+              onClick={() => setBrandPanelOpen((v) => !v)}
+              aria-label="Shop this shade"
+              id="shop-shade-btn"
+              title="Shop this shade"
+            >
+              <ShoppingBag size={18} />
+            </button>
+          )}
+
           {/* Snapshot */}
           {(camera.status === "active" || camera.status === "photo") && (
             <SnapshotButton
@@ -116,30 +128,9 @@ export default function TryOnPage() {
         <CompareView onSelectCompareShade={handleCompareSelect} />
       </div>
 
-      {/* Bottom panel */}
+      {/* Bottom panel — shade carousel only, no price clutter */}
       <div className="tryon-bottom-panel">
         <ShadeCarousel />
-
-        {selectedShade && (
-          <div className="tryon-bottom-actions">
-            <BrandMatchButton
-              selectedShade={selectedShade}
-              isOpen={brandPanelOpen}
-              onToggle={() => setBrandPanelOpen((prev) => !prev)}
-            />
-
-            <button
-              className="view-brands-btn"
-              onClick={() => setBrandPanelOpen(true)}
-              id="view-brands-btn"
-            >
-              <ShoppingBag size={16} />
-              Shop {selectedShade.name} — {selectedShade.brands.length} brand
-              {selectedShade.brands.length > 1 ? "s" : ""} from $
-              {Math.min(...selectedShade.brands.map((b) => b.price))}
-            </button>
-          </div>
-        )}
       </div>
 
       {/* Brand match panel (slide-up drawer) */}

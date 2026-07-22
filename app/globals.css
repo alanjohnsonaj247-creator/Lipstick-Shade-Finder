@@ -1401,6 +1401,12 @@ html {
   color: var(--text-primary);
 }
 
+.tryon-ctrl-btn--active {
+  background: rgba(var(--accent-rgb, 180,60,90), 0.25);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .opacity-slider-overlay {
   position: absolute;
   top: 60px;
