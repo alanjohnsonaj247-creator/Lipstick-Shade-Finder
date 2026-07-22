@@ -23,3 +23,9 @@ export interface ColorMatchResult {
   shade: ShadeData;
   distance: number;
 }
+
+export interface BrandMatchResult {
+  shade: ShadeData;
+  distance: number;
+  category: "near-identical" | "similar shade";
+}

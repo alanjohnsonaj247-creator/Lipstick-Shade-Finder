@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useEffect } from "react";
 import CameraView from "@/components/CameraView";
 import ShadeCarousel from "@/components/ShadeCarousel";
+import BrandMatchButton from "@/components/BrandMatchButton";
 import BrandMatchPanel from "@/components/BrandMatchPanel";
 import CompareView from "@/components/CompareView";
 import SnapshotButton from "@/components/SnapshotButton";
@@ -30,6 +31,10 @@ export default function TryOnPage() {
     },
     [selectShade]
   );
+
+  useEffect(() => {
+    setBrandPanelOpen(false);
+  }, [selectedShade?.shadeId]);
 
   return (
     <div className="tryon-page">
@@ -115,18 +120,25 @@ export default function TryOnPage() {
       <div className="tryon-bottom-panel">
         <ShadeCarousel />
 
-        {/* Brand panel CTA */}
         {selectedShade && (
-          <button
-            className="view-brands-btn"
-            onClick={() => setBrandPanelOpen(true)}
-            id="view-brands-btn"
-          >
-            <ShoppingBag size={16} />
-            Shop {selectedShade.name} — {selectedShade.brands.length} brand
-            {selectedShade.brands.length > 1 ? "s" : ""} from $
-            {Math.min(...selectedShade.brands.map((b) => b.price))}
-          </button>
+          <div className="tryon-bottom-actions">
+            <BrandMatchButton
+              selectedShade={selectedShade}
+              isOpen={brandPanelOpen}
+              onToggle={() => setBrandPanelOpen((prev) => !prev)}
+            />
+
+            <button
+              className="view-brands-btn"
+              onClick={() => setBrandPanelOpen(true)}
+              id="view-brands-btn"
+            >
+              <ShoppingBag size={16} />
+              Shop {selectedShade.name} — {selectedShade.brands.length} brand
+              {selectedShade.brands.length > 1 ? "s" : ""} from $
+              {Math.min(...selectedShade.brands.map((b) => b.price))}
+            </button>
+          </div>
         )}
       </div>
 

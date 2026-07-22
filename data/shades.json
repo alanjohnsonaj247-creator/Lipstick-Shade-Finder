@@ -9,7 +9,9 @@
     "occasion": ["bold", "evening"],
     "brands": [
       { "brandName": "MAC", "productName": "Ruby Woo", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" },
-      { "brandName": "NARS", "productName": "Dragon Girl", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }
+      { "brandName": "NARS", "productName": "Dragon Girl", "price": 26, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" },
+      { "brandName": "Lakme", "productName": "9 to 5 Primer + Matte Lipstick Red Alert", "price": 395, "currency": "INR", "buyUrl": "https://www.nykaa.com/lakme/lipstick/c/559", "imageUrl": "" },
+      { "brandName": "Nykaa Cosmetics", "productName": "Powerpacked Matte Lipstick Cherry", "price": 249, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/nykaa-cosmetics", "imageUrl": "" }
     ]
   },
   {
@@ -22,7 +24,9 @@
     "occasion": ["bold", "evening"],
     "brands": [
       { "brandName": "Charlotte Tilbury", "productName": "Red Hot Red", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" },
-      { "brandName": "Dior", "productName": "999 Rouge", "price": 42, "currency": "USD", "buyUrl": "https://www.dior.com", "imageUrl": "" }
+      { "brandName": "Dior", "productName": "999 Rouge", "price": 42, "currency": "USD", "buyUrl": "https://www.dior.com", "imageUrl": "" },
+      { "brandName": "Colorbar", "productName": "Matte Shade Lipstick Red Rush", "price": 225, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" },
+      { "brandName": "Sugar Cosmetics", "productName": "Smudge Me Not Liquid Lipstick Berry Rush", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/sugar", "imageUrl": "" }
     ]
   },
   {
@@ -72,7 +76,8 @@
     "occasion": ["bold", "everyday"],
     "brands": [
       { "brandName": "Fenty Beauty", "productName": "Stunna Lip Paint Uncensored", "price": 25, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" },
-      { "brandName": "Too Faced", "productName": "Lady Bold Fuschia", "price": 22, "currency": "USD", "buyUrl": "https://www.toofaced.com", "imageUrl": "" }
+      { "brandName": "Too Faced", "productName": "Lady Bold Fuschia", "price": 22, "currency": "USD", "buyUrl": "https://www.toofaced.com", "imageUrl": "" },
+      { "brandName": "Maybelline India", "productName": "SuperStay Matte Ink Lover", "price": 399, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/maybelline", "imageUrl": "" }
     ]
   },
   {
@@ -146,7 +151,8 @@
     "occasion": ["everyday"],
     "brands": [
       { "brandName": "Charlotte Tilbury", "productName": "Pillow Talk Medium", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" },
-      { "brandName": "Fenty Beauty", "productName": "Stunna Uncuffed", "price": 25, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" }
+      { "brandName": "Fenty Beauty", "productName": "Stunna Uncuffed", "price": 25, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" },
+      { "brandName": "L'Oreal Paris India", "productName": "Color Riche Matte Lipstick Beige Paradise", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/loreal-paris", "imageUrl": "" }
     ]
   },
   {
@@ -293,7 +299,8 @@
     "occasion": ["everyday"],
     "brands": [
       { "brandName": "MAC", "productName": "Antique Velvet", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" },
-      { "brandName": "Kylie Cosmetics", "productName": "Spice Matte Lip Kit", "price": 29, "currency": "USD", "buyUrl": "https://www.kyliecosmetics.com", "imageUrl": "" }
+      { "brandName": "Kylie Cosmetics", "productName": "Spice Matte Lip Kit", "price": 29, "currency": "USD", "buyUrl": "https://www.kyliecosmetics.com", "imageUrl": "" },
+      { "brandName": "Mamaearth", "productName": "Honey Matte Lipstick Toffee", "price": 249, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/mamaearth", "imageUrl": "" }
     ]
   },
   {
@@ -377,7 +384,8 @@
     "colorFamily": "purples",
     "occasion": ["everyday", "bold"],
     "brands": [
-      { "brandName": "Fenty Beauty", "productName": "Gloss Bomb Fairy Bomb", "price": 20, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" }
+      { "brandName": "Fenty Beauty", "productName": "Gloss Bomb Fairy Bomb", "price": 20, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" },
+      { "brandName": "Chambor", "productName": "Intense Matte Lipstick Iris", "price": 325, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/chambor", "imageUrl": "" }
     ]
   },
   {
@@ -414,7 +422,8 @@
     "occasion": ["everyday", "bold"],
     "brands": [
       { "brandName": "Clinique", "productName": "Pop Lip Colour Coral Pop", "price": 20, "currency": "USD", "buyUrl": "https://www.clinique.com", "imageUrl": "" },
-      { "brandName": "L'Oreal", "productName": "Colour Riche Coral Blossom", "price": 10, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" }
+      { "brandName": "L'Oreal", "productName": "Colour Riche Coral Blossom", "price": 10, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" },
+      { "brandName": "MyGlamm", "productName": "LIT Liquid Matte Lipstick Sunset Peach", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/myglamm", "imageUrl": "" }
     ]
   },
   {

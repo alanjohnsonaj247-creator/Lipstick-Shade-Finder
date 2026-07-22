@@ -1,13 +1,14 @@
-import type { ShadeData, ColorMatchResult } from "@/types";
+import type { ShadeData, ColorMatchResult, BrandMatchResult } from "@/types";
 
 /**
  * Convert hex color string to CIE Lab color space
  * for perceptually accurate Delta-E color distance
  */
 function hexToRgb(hex: string): [number, number, number] {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
+  const normalizedHex = hex.replace("#", "");
+  const r = parseInt(normalizedHex.slice(0, 2), 16);
+  const g = parseInt(normalizedHex.slice(2, 4), 16);
+  const b = parseInt(normalizedHex.slice(4, 6), 16);
   return [r, g, b];
 }
 
@@ -99,4 +100,54 @@ export function findClosestShade(
     distance: deltaE76(targetHex, shade.hexColor),
   }));
   return results.sort((a, b) => a.distance - b.distance)[0];
+}
+
+export interface FindBrandMatchesOptions {
+  threshold?: number;
+  maxResults?: number;
+  excludeBrandNames?: string[];
+}
+
+function normalizeBrandName(brandName: string): string {
+  return brandName.trim().toLowerCase();
+}
+
+function getMatchCategory(distance: number): BrandMatchResult["category"] {
+  return distance <= 3 ? "near-identical" : "similar shade";
+}
+
+/**
+ * Find shades in other brands that are closest in perceived color to the selected shade.
+ */
+export function findBrandMatches(
+  targetShade: ShadeData,
+  shadeDb: ShadeData[],
+  options: FindBrandMatchesOptions = {}
+): BrandMatchResult[] {
+  const threshold = options.threshold ?? 12;
+  const maxResults = options.maxResults ?? 6;
+  const excludedBrands = new Set(
+    (options.excludeBrandNames ?? []).map(normalizeBrandName)
+  );
+
+  return shadeDb
+    .filter((shade) => shade.shadeId !== targetShade.shadeId)
+    .filter(
+      (shade) =>
+        !shade.brands.some((brand) =>
+          excludedBrands.has(normalizeBrandName(brand.brandName))
+        )
+    )
+    .map((shade) => ({
+      shade,
+      distance: deltaE76(targetShade.hexColor, shade.hexColor),
+      category: "similar shade" as BrandMatchResult["category"],
+    }))
+    .filter((result) => result.distance <= threshold)
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, maxResults)
+    .map((result) => ({
+      ...result,
+      category: getMatchCategory(result.distance),
+    }));
 }
