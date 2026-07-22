@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import type { ShadeData, BrandData } from "@/types";
 import { findBrandMatches } from "@/lib/colorMatching";
-import { ExternalLink, Tag, Palette, X } from "lucide-react";
+import { ExternalLink, Tag, Palette, X, Copy, Check } from "lucide-react";
 import shadesData from "@/data/shades.json";
 import clsx from "clsx";
 
@@ -20,14 +20,52 @@ const FINISH_COLORS: Record<string, string> = {
   sheer: "#F4D1CC",
 };
 
+function CopyHexButton({ hex }: { hex: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(hex);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for browsers without clipboard API
+      const el = document.createElement("textarea");
+      el.value = hex;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+  return (
+    <button
+      onClick={handleCopy}
+      className={clsx("copy-hex-btn", { "copy-hex-btn--copied": copied })}
+      title="Copy hex code"
+      aria-label="Copy hex colour code"
+    >
+      {copied ? <Check size={12} /> : <Copy size={12} />}
+      {copied ? "Copied!" : "Copy"}
+    </button>
+  );
+}
+
 function BrandCard({ brand, finish }: { brand: BrandData; finish: string }) {
+  // Build a Google search URL as a reliable fallback since most buyUrls are homepages
+  const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+    `${brand.brandName} ${brand.productName} lipstick`
+  )}`;
+  const href = brand.buyUrl && brand.buyUrl !== "#" ? brand.buyUrl : searchUrl;
+
   return (
     <a
-      href={brand.buyUrl}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="brand-card"
-      aria-label={`Shop ${brand.productName} by ${brand.brandName} for ${brand.currency === "USD" ? "$" : ""}${brand.price}`}
+      aria-label={`Find ${brand.productName} by ${brand.brandName}`}
     >
       <div className="brand-card-left">
         <div className="brand-logo-placeholder" aria-hidden>
@@ -46,7 +84,8 @@ function BrandCard({ brand, finish }: { brand: BrandData; finish: string }) {
           {finish}
         </span>
         <span className="brand-price">
-          {brand.currency === "USD" ? "$" : brand.currency} {brand.price}
+          {brand.currency === "USD" ? "$" : brand.currency + " "}
+          {brand.price}
         </span>
         <ExternalLink size={14} className="shop-icon" />
       </div>
@@ -63,7 +102,6 @@ export default function BrandMatchPanel({
 
   const matchResults = useMemo(() => {
     if (!selectedShade) return [];
-
     return findBrandMatches(selectedShade, allShades, {
       threshold: 12,
       maxResults: 6,
@@ -75,16 +113,13 @@ export default function BrandMatchPanel({
 
   const minPrice = Math.min(...selectedShade.brands.map((b) => b.price));
   const maxPrice = Math.max(...selectedShade.brands.map((b) => b.price));
-  const nearIdentical = matchResults.filter(
-    (result) => result.category === "near-identical"
-  );
-  const similarShades = matchResults.filter(
-    (result) => result.category === "similar shade"
-  );
+  const nearIdentical = matchResults.filter((r) => r.category === "near-identical");
+  const similarShades = matchResults.filter((r) => r.category === "similar shade");
 
   return (
     <div className={clsx("brand-panel", { "panel-open": isOpen })} id="brand-match-panel">
       <div className="brand-panel-inner">
+        {/* ── Header ───────────────────────────────────────────────── */}
         <div className="panel-header">
           <div className="panel-header-left">
             <span
@@ -97,36 +132,49 @@ export default function BrandMatchPanel({
                 {selectedShade.finish} · {selectedShade.undertone} undertone ·{" "}
                 {selectedShade.colorFamily}
               </p>
+              {/* Hex code with copy button */}
+              <div className="panel-hex-row">
+                <span className="hex-label">Est. hex</span>
+                <code className="hex-value">{selectedShade.hexColor.toUpperCase()}</code>
+                <CopyHexButton hex={selectedShade.hexColor} />
+              </div>
             </div>
           </div>
           <button
             className="panel-close-btn"
             onClick={onClose}
-            aria-label="Close brand panel"
+            aria-label="Close shade panel"
             id="close-brand-panel"
           >
             <X size={18} />
           </button>
         </div>
 
+        {/* ── Price range ──────────────────────────────────────────── */}
         <div className="price-range-row">
           <Tag size={13} />
           <span>
             {selectedShade.brands.length === 1
-              ? `$${minPrice}`
-              : `$${minPrice} – $${maxPrice}`} · {selectedShade.brands.length} brand
+              ? `${selectedShade.brands[0].currency === "USD" ? "$" : selectedShade.brands[0].currency + " "}${minPrice}`
+              : `from $${minPrice}`}
+            {" · "}{selectedShade.brands.length} brand
             {selectedShade.brands.length > 1 ? "s" : ""}
           </span>
         </div>
 
+        {/* ── Where to find it ─────────────────────────────────────── */}
         <div className="panel-section">
           <h3 className="panel-section-title">
             <span
               className="section-dot"
               style={{ backgroundColor: selectedShade.hexColor }}
             />
-            Exact Shade
+            Where to Find It
           </h3>
+          <p className="panel-disclaimer-inline">
+            Links go to brand websites. Shade Finder earns no commission and is
+            not affiliated with any brand listed.
+          </p>
           <div className="brand-list">
             {selectedShade.brands.map((brand, i) => (
               <BrandCard
@@ -138,24 +186,22 @@ export default function BrandMatchPanel({
           </div>
         </div>
 
+        {/* ── Color-based alternatives ─────────────────────────────── */}
         <div className="panel-section">
           <h3 className="panel-section-title">
             <Palette size={13} />
             Color-based alternatives
           </h3>
           <p className="panel-section-copy">
-            Matches are ranked by Lab-space Delta-E so they reflect how close the shades feel in color, not just their names.
+            Matches are ranked by Lab-space Delta-E — how close shades feel in
+            color, not just by name.
           </p>
 
           {nearIdentical.length > 0 && (
             <div className="match-group">
               <div className="match-group-header">
-                <span className="match-pill match-pill-identical">
-                  Near-identical
-                </span>
-                <span className="match-group-caption">
-                  Very close to the selected shade
-                </span>
+                <span className="match-pill match-pill-identical">Near-identical</span>
+                <span className="match-group-caption">Very close to the selected shade</span>
               </div>
               <div className="near-match-list">
                 {nearIdentical.map(({ shade, distance }) => (
@@ -173,18 +219,23 @@ export default function BrandMatchPanel({
                       </div>
                     </div>
                     <div className="near-match-brands">
-                      {shade.brands.slice(0, 2).map((brand, i) => (
-                        <a
-                          key={`${brand.brandName}-${i}`}
-                          href={brand.buyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="near-brand-chip"
-                        >
-                          {brand.brandName} ${brand.price}
-                          <ExternalLink size={10} />
-                        </a>
-                      ))}
+                      {shade.brands.slice(0, 2).map((brand, i) => {
+                        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+                          `${brand.brandName} ${brand.productName} lipstick`
+                        )}`;
+                        return (
+                          <a
+                            key={`${brand.brandName}-${i}`}
+                            href={brand.buyUrl && brand.buyUrl !== "#" ? brand.buyUrl : searchUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="near-brand-chip"
+                          >
+                            {brand.brandName}
+                            <ExternalLink size={10} />
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
@@ -196,9 +247,7 @@ export default function BrandMatchPanel({
             <div className="match-group">
               <div className="match-group-header">
                 <span className="match-pill">Similar shade</span>
-                <span className="match-group-caption">
-                  Good alternatives in the same family
-                </span>
+                <span className="match-group-caption">Good alternatives in the same family</span>
               </div>
               <div className="near-match-list">
                 {similarShades.map(({ shade, distance }) => (
@@ -216,18 +265,23 @@ export default function BrandMatchPanel({
                       </div>
                     </div>
                     <div className="near-match-brands">
-                      {shade.brands.slice(0, 2).map((brand, i) => (
-                        <a
-                          key={`${brand.brandName}-${i}`}
-                          href={brand.buyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="near-brand-chip"
-                        >
-                          {brand.brandName} ${brand.price}
-                          <ExternalLink size={10} />
-                        </a>
-                      ))}
+                      {shade.brands.slice(0, 2).map((brand, i) => {
+                        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+                          `${brand.brandName} ${brand.productName} lipstick`
+                        )}`;
+                        return (
+                          <a
+                            key={`${brand.brandName}-${i}`}
+                            href={brand.buyUrl && brand.buyUrl !== "#" ? brand.buyUrl : searchUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="near-brand-chip"
+                          >
+                            {brand.brandName}
+                            <ExternalLink size={10} />
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}

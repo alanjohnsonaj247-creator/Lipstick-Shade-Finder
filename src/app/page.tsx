@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, Shield, Zap, Camera, ShoppingBag, ArrowRight } from "lucide-react";
+import { Sparkles, Shield, Zap, Camera, Heart, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Shade Finder — Virtual Lipstick Try-On | See It On You Before You Buy",
   description:
-    "Try on 60+ lipstick shades from MAC, NARS, Charlotte Tilbury, and more — live on your face using your browser's camera. No download required.",
+    "Try 60+ curated lipstick shades live on your face — entirely in your browser. AI-powered, no signup, no download.",
   openGraph: {
     title: "Shade Finder — Virtual Lipstick Try-On",
-    description: "Try any lipstick shade live on your face. Powered by AI face tracking.",
+    description: "Try any lipstick shade live on your face. AI face tracking, 60+ shades, no signup.",
     type: "website",
+    url: "https://lipstick-shade-finder.vercel.app",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Shade Finder AR Try-On" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shade Finder — Try Lipstick Shades Live",
+    description: "AR lipstick try-on in your browser. 60+ shades, no app, no signup.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -25,9 +33,9 @@ const FEATURES = [
     desc: "Reds, nudes, pinks, berries, browns, purples — with matte, satin, glossy & sheer finishes.",
   },
   {
-    icon: <ShoppingBag size={28} />,
-    title: "Shop the Look",
-    desc: "For every shade, see which brands carry it and click through to buy instantly.",
+    icon: <Heart size={28} />,
+    title: "Save & Compare",
+    desc: "Find shades that suit your undertone. Copy the hex code or compare side-by-side.",
   },
   {
     icon: <Shield size={28} />,
@@ -41,9 +49,10 @@ const FEATURES = [
   },
 ];
 
-const BRAND_LOGOS = [
-  "MAC", "NARS", "Charlotte Tilbury", "Fenty Beauty", "Dior",
-  "YSL Beauty", "Urban Decay", "Bobbi Brown", "Glossier", "Clinique",
+// Brand-agnostic: show finish/family labels, not brand names
+const SHADE_FAMILIES = [
+  "Reds", "Pinks", "Nudes", "Mauves", "Berries",
+  "Browns", "Corals", "Purples", "· Matte", "· Glossy", "· Satin", "· Sheer",
 ];
 
 export default function LandingPage() {
@@ -63,13 +72,13 @@ export default function LandingPage() {
           </h1>
           <p className="hero-subtitle">
             See exactly how a shade looks on <em>you</em> — not on a model —
-            before you spend a dollar. Over 60 shades from 10+ premium brands,
-            all in your browser.
+            before you spend a dollar. 60+ curated shades across every finish,
+            all in your browser. Free forever.
           </p>
           <div className="hero-cta-row">
             <Link href="/try-on" className="cta-primary" id="hero-try-now-btn">
               <Camera size={20} />
-              Try It Now — Free
+              Try It Free
               <ArrowRight size={18} />
             </Link>
             <span className="cta-note">No download · No signup · Works on mobile</span>
@@ -101,13 +110,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Brand logos */}
+      {/* Shade families strip — brand-agnostic */}
       <section className="brands-strip">
-        <p className="brands-strip-label">Shades from</p>
+        <p className="brands-strip-label">60+ shades across</p>
         <div className="brands-marquee">
-          {[...BRAND_LOGOS, ...BRAND_LOGOS].map((b, i) => (
+          {[...SHADE_FAMILIES, ...SHADE_FAMILIES].map((label, i) => (
             <span key={i} className="brand-marquee-item">
-              {b}
+              {label}
             </span>
           ))}
         </div>
@@ -160,7 +169,7 @@ export default function LandingPage() {
         </div>
         <Link href="/try-on" className="cta-primary cta-centered" id="shade-preview-try-btn">
           <Camera size={18} />
-          Try All Shades Live
+          Try It Free
         </Link>
       </section>
 
@@ -170,10 +179,10 @@ export default function LandingPage() {
           <div className="privacy-icon">🔒</div>
           <h2 className="privacy-title">Your Face. Your Device. Your Privacy.</h2>
           <p className="privacy-body">
-            Shade Finder uses AI face tracking that runs entirely in your
-            browser using WebAssembly — no face data, images, or video is ever
-            sent to a server. We&apos;re committed to being the most private
-            beauty try-on tool available.
+            Shade Finder uses Google&apos;s MediaPipe face-landmark model, compiled to
+            WebAssembly and running <strong>entirely inside your browser tab</strong>.
+            Your camera feed never leaves your device — no video, no images, and no
+            biometric data are ever transmitted to any server.
           </p>
           <div className="privacy-points">
             <span>✅ No uploads</span>
@@ -181,6 +190,9 @@ export default function LandingPage() {
             <span>✅ No tracking</span>
             <span>✅ Works offline after first load</span>
           </div>
+          <Link href="/privacy" className="privacy-learn-more">
+            Read our full Privacy Policy →
+          </Link>
         </div>
       </section>
 
@@ -189,7 +201,7 @@ export default function LandingPage() {
         <h2 className="final-cta-title">Ready to Find Your Perfect Shade?</h2>
         <Link href="/try-on" className="cta-primary cta-large" id="final-cta-btn">
           <Camera size={22} />
-          Start Try-On
+          Try It Free
           <ArrowRight size={20} />
         </Link>
         <p className="final-cta-note">Free · Works on any device · No signup</p>
@@ -197,12 +209,21 @@ export default function LandingPage() {
 
       <footer className="landing-footer">
         <p>
-          © 2024 Shade Finder · Built with MediaPipe AI · All face data processed locally
+          © {new Date().getFullYear()} Shade Finder · Built with MediaPipe AI · All face data processed locally
         </p>
         <div className="footer-links">
-          <button onClick={() => {}} id="footer-privacy-btn">Privacy</button>
+          <Link href="/privacy" className="footer-privacy-link" id="footer-privacy-btn">
+            Privacy Policy
+          </Link>
+          <Link href="/about" id="footer-about-link">About</Link>
           <Link href="/try-on" id="footer-tryon-link">Try-On App</Link>
         </div>
+        <p className="footer-legal">
+          Shade Finder is an independent tool and is not affiliated with, endorsed by,
+          or partnered with any cosmetics brand. Brand and product names referenced in
+          shade suggestions are trademarks of their respective owners, used for
+          descriptive purposes only.
+        </p>
       </footer>
     </main>
   );
