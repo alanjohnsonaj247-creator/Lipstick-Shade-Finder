@@ -187,7 +187,7 @@ export default function LandingPage() {
 
       <footer className="landing-footer">
         <p>
-          © 2024 Shade Finder · Built with MediaPipe AI · All face data processed locally
+          © {new Date().getFullYear()} Shade Finder · Built with MediaPipe AI · All face data processed locally
         </p>
         <div className="footer-links">
           <a href="#privacy" className="footer-privacy-link" id="footer-privacy-btn">Privacy</a>
