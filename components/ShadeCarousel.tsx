@@ -12,6 +12,7 @@ import shadesData from "@/data/shades.json";
 const BASE_SHADES = shadesData as ShadeData[];
 
 const COLOR_FAMILIES = [
+  { key: "saved", label: "❤️ Saved" },
   { key: "all", label: "All" },
   { key: "reds", label: "Reds 🔴" },
   { key: "pinks", label: "Pinks 🩷" },
@@ -67,8 +68,14 @@ export default function ShadeCarousel() {
     if (el) el.scrollBy({ left: dir === "right" ? 200 : -200, behavior: "smooth" });
   }, []);
 
+  // Is the "Saved" tab active?
+  const isSavedTab = activeFilter.colorFamily === "saved";
+
   // Filter shades
   const filteredShades = ALL_SHADES.filter((s) => {
+    // Saved tab: show only hearted shades
+    if (isSavedTab) return favoriteIds.includes(s.shadeId);
+
     if (
       activeFilter.colorFamily &&
       activeFilter.colorFamily !== "all" &&
@@ -131,6 +138,9 @@ export default function ShadeCarousel() {
               key={f.key}
               className={clsx("family-tab", {
                 "tab-active": (activeFilter.colorFamily || "all") === f.key,
+                "tab-saved": f.key === "saved",
+                "tab-saved-active":
+                  f.key === "saved" && activeFilter.colorFamily === "saved",
               })}
               onClick={() =>
                 setFilter("colorFamily", f.key === "all" ? null : f.key)
@@ -138,6 +148,9 @@ export default function ShadeCarousel() {
               id={`family-tab-${f.key}`}
             >
               {f.label}
+              {f.key === "saved" && favoriteIds.length > 0 && (
+                <span className="saved-tab-count">{favoriteIds.length}</span>
+              )}
             </button>
           ))}
         </div>
@@ -251,11 +264,23 @@ export default function ShadeCarousel() {
           aria-label="Lipstick shade palette"
         >
           {filteredShades.length === 0 ? (
-            <div className="no-shades-msg">
-              No shades match your filters.{" "}
-              <button onClick={clearFilters} className="inline-link">
-                Clear filters
-              </button>
+            <div className={clsx("no-shades-msg", { "saved-empty-state": isSavedTab })}>
+              {isSavedTab ? (
+                <>
+                  <span className="saved-empty-icon">🤍</span>
+                  <span>No saved shades yet</span>
+                  <span className="saved-empty-hint">
+                    Tap ❤️ on any shade to save it — your picks stay here across refreshes
+                  </span>
+                </>
+              ) : (
+                <>
+                  No shades match your filters.{" "}
+                  <button onClick={clearFilters} className="inline-link">
+                    Clear filters
+                  </button>
+                </>
+              )}
             </div>
           ) : (
             filteredShades.map((shade, idx) => (
