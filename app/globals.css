@@ -321,8 +321,8 @@ html {
 
 .shade-swatch-btn {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 2.5px solid transparent;
   background: transparent;
@@ -467,11 +467,12 @@ html {
   background: var(--bg-glass);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border);
-  padding: 14px 0 8px;
+  padding: 6px 0 4px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
+
 
 .family-tabs-row {
   display: flex;
@@ -493,10 +494,10 @@ html {
 
 .family-tab {
   flex-shrink: 0;
-  padding: 6px 14px;
+  padding: 4px 10px;
   background: transparent;
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   font-family: var(--font-sans);
   border: 1px solid transparent;
@@ -790,9 +791,9 @@ html {
 
 .swatches-row {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   overflow-x: auto;
-  padding: 8px 12px;
+  padding: 4px 8px;
   scrollbar-width: none;
   scroll-behavior: smooth;
   flex: 1;
@@ -818,15 +819,15 @@ html {
 .selected-shade-info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
+  gap: 8px;
+  padding: 6px 12px;
   border-top: 1px solid var(--border);
   animation: fadeInUp 0.2s ease;
 }
 
 .selected-swatch-mini {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   flex-shrink: 0;
   box-shadow: var(--shadow-sm);
@@ -840,7 +841,7 @@ html {
 }
 
 .selected-shade-name {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -1613,12 +1614,12 @@ html {
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 14px 20px;
+  padding: 9px 16px;
   background: linear-gradient(135deg, rgba(182,39,109,0.2), rgba(182,39,109,0.1));
   border: none;
   border-top: 1px solid rgba(182,39,109,0.2);
   color: var(--rose-300);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   font-family: var(--font-sans);
   cursor: pointer;
