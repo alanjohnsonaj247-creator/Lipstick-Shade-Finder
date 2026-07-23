@@ -4,9 +4,30 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { ShadeData } from "@/types";
 
+/** Separate key — pure backup, not auto-loaded on refresh */
+export const SAVED_SHADES_KEY = "shade-finder-saved-shades";
+
+export function readSavedIds(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(SAVED_SHADES_KEY);
+    return raw ? (JSON.parse(raw) as string[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeSavedIds(ids: string[]) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(SAVED_SHADES_KEY, JSON.stringify(ids));
+  } catch {}
+}
+
 interface ShadeStore {
   selectedShade: ShadeData | null;
   compareShades: ShadeData[];
+  /** Session-only — always starts empty on refresh */
   favoriteIds: string[];
   activeFilter: {
     colorFamily: string | null;
@@ -22,6 +43,8 @@ interface ShadeStore {
   removeFromCompare: (shadeId: string) => void;
   clearCompare: () => void;
   toggleFavorite: (shadeId: string) => void;
+  /** Load backed-up IDs into the current session */
+  restoreFavorites: (ids: string[]) => void;
   setFilter: (key: string, value: string | number | null) => void;
   clearFilters: () => void;
   setOpacity: (v: number) => void;
@@ -32,7 +55,7 @@ export const useShadeStore = create<ShadeStore>()(
     (set) => ({
       selectedShade: null,
       compareShades: [],
-      favoriteIds: [],
+      favoriteIds: [],          // starts empty every session
       activeFilter: {
         colorFamily: null,
         finish: null,
@@ -62,11 +85,16 @@ export const useShadeStore = create<ShadeStore>()(
       clearCompare: () => set({ compareShades: [] }),
 
       toggleFavorite: (shadeId) =>
-        set((s) => ({
-          favoriteIds: s.favoriteIds.includes(shadeId)
+        set((s) => {
+          const next = s.favoriteIds.includes(shadeId)
             ? s.favoriteIds.filter((id) => id !== shadeId)
-            : [...s.favoriteIds, shadeId],
-        })),
+            : [...s.favoriteIds, shadeId];
+          // Keep backup in sync so restore works next session
+          writeSavedIds(next);
+          return { favoriteIds: next };
+        }),
+
+      restoreFavorites: (ids) => set({ favoriteIds: ids }),
 
       setFilter: (key, value) =>
         set((s) => ({
@@ -88,8 +116,8 @@ export const useShadeStore = create<ShadeStore>()(
     }),
     {
       name: "shade-finder-store",
+      // Only opacity persists — everything else resets on refresh
       partialize: (s) => ({
-        favoriteIds: s.favoriteIds,
         opacity: s.opacity,
       }),
     }

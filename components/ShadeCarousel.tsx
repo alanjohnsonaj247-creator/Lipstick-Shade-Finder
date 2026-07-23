@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef, useCallback, useState } from "react";
+import React, { useRef, useCallback, useState, useEffect } from "react";
 import ShadeSwatch from "./ShadeSwatch";
 import AddColourModal from "./AddColourModal";
 import type { ShadeData } from "@/types";
-import { useShadeSelection } from "@/hooks/useShadeSelection";
-import { ChevronLeft, ChevronRight, SlidersHorizontal, X, Plus } from "lucide-react";
+import { useShadeSelection, readSavedIds } from "@/hooks/useShadeSelection";
+import { ChevronLeft, ChevronRight, SlidersHorizontal, X, Plus, RotateCcw } from "lucide-react";
 import clsx from "clsx";
 import shadesData from "@/data/shades.json";
 
@@ -44,12 +44,27 @@ export default function ShadeCarousel() {
     selectShade,
     favoriteIds,
     toggleFavorite,
+    restoreFavorites,
     compareShades,
     addToCompare,
     activeFilter,
     setFilter,
     clearFilters,
   } = useShadeSelection();
+
+  // Restore banner — shows on mount if there are backed-up saves
+  const [restoreIds, setRestoreIds] = useState<string[]>([]);
+  const [showRestore, setShowRestore] = useState(false);
+
+  useEffect(() => {
+    const backed = readSavedIds();
+    if (backed.length > 0 && favoriteIds.length === 0) {
+      setRestoreIds(backed);
+      setShowRestore(true);
+    }
+  // Only run once on mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleAddShade = useCallback((shade: ShadeData) => {
     setCustomShades((prev) => {
@@ -130,6 +145,36 @@ export default function ShadeCarousel() {
 
   return (
     <div className="shade-carousel-container">
+
+      {/* ── Restore saved shades banner ── */}
+      {showRestore && (
+        <div className="restore-banner" role="alert">
+          <RotateCcw size={15} className="restore-icon" />
+          <span className="restore-msg">
+            You have <strong>{restoreIds.length}</strong> saved shade{restoreIds.length > 1 ? "s" : ""} — restore them?
+          </span>
+          <div className="restore-actions">
+            <button
+              className="restore-btn restore-yes"
+              id="restore-saved-yes"
+              onClick={() => {
+                restoreFavorites(restoreIds);
+                setShowRestore(false);
+              }}
+            >
+              Yes, restore
+            </button>
+            <button
+              className="restore-btn restore-no"
+              id="restore-saved-no"
+              onClick={() => setShowRestore(false)}
+            >
+              No thanks
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Color family tabs */}
       <div className="family-tabs-row">
         <div className="family-tabs">
