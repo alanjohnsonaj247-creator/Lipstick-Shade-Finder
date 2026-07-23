@@ -1493,18 +1493,16 @@ html {
    ════════════════════════════════════════════════ */
 
 .tryon-page {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   height: 100dvh;
   overflow: hidden;
   background: var(--bg-deep);
 }
 
 .tryon-camera-area {
-  position: relative;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .tryon-top-controls {
@@ -1604,8 +1602,130 @@ html {
 }
 
 .tryon-bottom-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  box-shadow: 0 -6px 32px rgba(0,0,0,0.55);
+  transition: box-shadow 0.3s ease;
+}
+
+/* ── Panel handle (always visible) ── */
+.panel-handle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 14px 7px;
+  background: rgba(14, 5, 10, 0.94);
+  backdrop-filter: blur(24px);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  min-height: 42px;
+  transition: background 0.2s ease;
+}
+
+.panel-handle:hover {
+  background: rgba(20, 8, 15, 0.97);
+}
+
+.panel-drag-knob {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.18);
+}
+
+.panel-shade-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+}
+
+.panel-shade-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
   flex-shrink: 0;
-  border-top: 1px solid var(--border);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.12);
+}
+
+.panel-shade-name-mini {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.panel-shade-sep {
+  color: var(--text-muted);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.panel-shade-meta-mini {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.panel-hint-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.panel-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.chevron-up  { transform: rotate(0deg); }
+.chevron-down { transform: rotate(180deg); }
+
+/* ── Collapsed: hide everything except swatches ── */
+.panel-collapsed .family-tabs-row,
+.panel-collapsed .selected-shade-info,
+.panel-collapsed .tryon-bottom-actions,
+.panel-collapsed .restore-banner,
+.panel-collapsed .filter-panel {
+  display: none !important;
+}
+
+.panel-collapsed .shade-carousel-container {
+  padding: 0 !important;
+  gap: 0 !important;
+  border-top: none !important;
+  background: rgba(14, 5, 10, 0.94) !important;
+  backdrop-filter: blur(24px) !important;
+}
+
+.panel-collapsed .swatches-row {
+  padding: 4px 8px 6px !important;
+}
+
+/* ── Expanded: animate in ── */
+.panel-expanded .shade-carousel-container {
+  animation: panelSlideIn 0.25s ease;
+}
+
+@keyframes panelSlideIn {
+  from { opacity: 0.6; transform: translateY(6px); }
+  to   { opacity: 1;   transform: translateY(0); }
 }
 
 .view-brands-btn {

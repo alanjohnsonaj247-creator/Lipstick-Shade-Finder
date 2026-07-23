@@ -11,7 +11,7 @@ import PrivacyBadge from "@/components/PrivacyBadge";
 import { useCamera } from "@/hooks/useCamera";
 import { useShadeSelection } from "@/hooks/useShadeSelection";
 import type { ShadeData } from "@/types";
-import { ShoppingBag, SlidersHorizontal, Upload } from "lucide-react";
+import { ShoppingBag, SlidersHorizontal, Upload, ChevronUp } from "lucide-react";
 
 export default function TryOnPage() {
   const camera = useCamera();
@@ -20,6 +20,7 @@ export default function TryOnPage() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [brandPanelOpen, setBrandPanelOpen] = useState(false);
   const [showOpacitySlider, setShowOpacitySlider] = useState(false);
+  const [panelExpanded, setPanelExpanded] = useState(false);
 
   const handleCanvasReady = useCallback((canvas: HTMLCanvasElement) => {
     canvasRef.current = canvas;
@@ -38,7 +39,7 @@ export default function TryOnPage() {
 
   return (
     <div className="tryon-page">
-      {/* Camera + canvas area */}
+      {/* Camera fills full screen */}
       <div className="tryon-camera-area">
         <CameraView
           stream={camera.stream}
@@ -60,7 +61,6 @@ export default function TryOnPage() {
 
         {/* Floating controls — top right */}
         <div className="tryon-top-right-controls">
-          {/* Opacity / intensity slider toggle */}
           <button
             className="tryon-ctrl-btn"
             onClick={() => setShowOpacitySlider((v) => !v)}
@@ -71,7 +71,6 @@ export default function TryOnPage() {
             <SlidersHorizontal size={18} />
           </button>
 
-          {/* Upload photo */}
           <button
             className="tryon-ctrl-btn"
             onClick={() =>
@@ -84,7 +83,6 @@ export default function TryOnPage() {
             <Upload size={18} />
           </button>
 
-          {/* Snapshot */}
           {(camera.status === "active" || camera.status === "photo") && (
             <SnapshotButton
               canvasRef={canvasRef}
@@ -116,10 +114,46 @@ export default function TryOnPage() {
         <CompareView onSelectCompareShade={handleCompareSelect} />
       </div>
 
-      {/* Bottom panel */}
-      <div className="tryon-bottom-panel">
+      {/* ── Floating bottom panel ── */}
+      <div className={`tryon-bottom-panel ${panelExpanded ? "panel-expanded" : "panel-collapsed"}`}>
+
+        {/* Handle bar — always visible, click to expand/collapse */}
+        <div
+          className="panel-handle"
+          onClick={() => setPanelExpanded((v) => !v)}
+          role="button"
+          aria-label={panelExpanded ? "Collapse shade panel" : "Expand shade panel"}
+          id="panel-toggle-handle"
+        >
+          <div className="panel-drag-knob" />
+
+          {/* Compact shade info shown when collapsed */}
+          {selectedShade ? (
+            <div className="panel-shade-chip">
+              <div
+                className="panel-shade-dot"
+                style={{ background: selectedShade.hexColor }}
+              />
+              <span className="panel-shade-name-mini">{selectedShade.name}</span>
+              <span className="panel-shade-sep">·</span>
+              <span className="panel-shade-meta-mini">
+                {selectedShade.finish}
+              </span>
+            </div>
+          ) : (
+            <span className="panel-hint-text">Tap a shade to try it on</span>
+          )}
+
+          <ChevronUp
+            size={15}
+            className={`panel-chevron ${panelExpanded ? "chevron-up" : "chevron-down"}`}
+          />
+        </div>
+
+        {/* Shade carousel — always rendered; CSS hides heavy bits when collapsed */}
         <ShadeCarousel />
 
+        {/* Shop button — only shown when expanded */}
         {selectedShade && (
           <div className="tryon-bottom-actions">
             <BrandMatchButton
