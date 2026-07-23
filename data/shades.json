@@ -593,5 +593,146 @@
     "brands": [
       { "brandName": "Charlotte Tilbury", "productName": "Glastonberry Pillow Talk Deep", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" }
     ]
-  }
+  },
+
+  { "shadeId": "msi-005", "name": "Loyalist", "hexColor": "#C4907A", "finish": "matte", "undertone": "warm", "colorFamily": "nudes", "occasion": ["everyday"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 05 Loyalist", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }, { "brandName": "Maybelline India", "productName": "SuperStay Matte Ink Lipstick 05", "price": 349, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/maybelline", "imageUrl": "" }] },
+
+  { "shadeId": "msi-010", "name": "Dreamer", "hexColor": "#EEB8C8", "finish": "matte", "undertone": "neutral", "colorFamily": "pinks", "occasion": ["everyday", "bridal"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 10 Dreamer", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-015", "name": "Lover", "hexColor": "#D4879A", "finish": "matte", "undertone": "neutral", "colorFamily": "pinks", "occasion": ["everyday", "bridal"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 15 Lover", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }, { "brandName": "Colorbar", "productName": "Sinful Matte Lip Color Blush", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" }] },
+
+  { "shadeId": "msi-020", "name": "Pioneer", "hexColor": "#C0192B", "finish": "matte", "undertone": "cool", "colorFamily": "reds", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 20 Pioneer", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-030", "name": "Romantic", "hexColor": "#D02D8A", "finish": "matte", "undertone": "cool", "colorFamily": "pinks", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 30 Romantic", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-040", "name": "Believer", "hexColor": "#5C1F6E", "finish": "matte", "undertone": "cool", "colorFamily": "purples", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 40 Believer", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-050", "name": "Voyager", "hexColor": "#B56D7A", "finish": "matte", "undertone": "neutral", "colorFamily": "pinks", "occasion": ["everyday"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 50 Voyager", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }, { "brandName": "Nykaa Cosmetics", "productName": "So Matte! Lipstick Mauve Madness", "price": 299, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/nykaa-cosmetics", "imageUrl": "" }] },
+
+  { "shadeId": "msi-060", "name": "Poet", "hexColor": "#EEB8A0", "finish": "matte", "undertone": "warm", "colorFamily": "nudes", "occasion": ["everyday"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 60 Poet", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-080", "name": "Ruler", "hexColor": "#9C5270", "finish": "matte", "undertone": "neutral", "colorFamily": "berries", "occasion": ["everyday", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 80 Ruler", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-118", "name": "Dancer", "hexColor": "#E01828", "finish": "matte", "undertone": "warm", "colorFamily": "reds", "occasion": ["bold"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 118 Dancer", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }, { "brandName": "Sugar Cosmetics", "productName": "Smudge Me Not Liquid Lipstick Red Dwarf", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/sugar", "imageUrl": "" }] },
+
+  { "shadeId": "msi-120", "name": "Artist", "hexColor": "#D45599", "finish": "matte", "undertone": "cool", "colorFamily": "pinks", "occasion": ["bold"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 120 Artist", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-130", "name": "Self-Starter", "hexColor": "#BF6878", "finish": "matte", "undertone": "warm", "colorFamily": "pinks", "occasion": ["everyday"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 130 Self-Starter", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-175", "name": "Ringleader", "hexColor": "#B03040", "finish": "matte", "undertone": "neutral", "colorFamily": "reds", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 175 Ringleader", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-285", "name": "Thrill Seeker", "hexColor": "#280820", "finish": "matte", "undertone": "cool", "colorFamily": "berries", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 285 Thrill Seeker", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-330", "name": "Innovator", "hexColor": "#B84820", "finish": "matte", "undertone": "warm", "colorFamily": "browns", "occasion": ["everyday", "bold"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 330 Innovator", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }] },
+
+  { "shadeId": "msi-525", "name": "Vixen", "hexColor": "#5E2820", "finish": "matte", "undertone": "warm", "colorFamily": "browns", "occasion": ["everyday", "evening"],
+    "brands": [{ "brandName": "Maybelline", "productName": "SuperStay Matte Ink 525 Vixen", "price": 11, "currency": "USD", "buyUrl": "https://www.maybelline.com", "imageUrl": "" }, { "brandName": "Lakme", "productName": "9 to 5 Primer + Matte Brown Signal", "price": 395, "currency": "INR", "buyUrl": "https://www.nykaa.com/lakme/lipstick", "imageUrl": "" }] },
+
+  { "shadeId": "ls-001", "name": "Ballet Pink", "hexColor": "#F4B8CC", "finish": "matte", "undertone": "cool", "colorFamily": "pinks", "occasion": ["everyday", "bridal"],
+    "brands": [{ "brandName": "NYX Professional", "productName": "Soft Matte Lip Cream London", "price": 7, "currency": "USD", "buyUrl": "https://www.nyxcosmetics.com", "imageUrl": "" }, { "brandName": "Lakme", "productName": "Absolute Mousse Lip Color Baby Pink", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/lakme/lipstick", "imageUrl": "" }] },
+
+  { "shadeId": "ls-002", "name": "Blush Rose", "hexColor": "#E49EB0", "finish": "satin", "undertone": "neutral", "colorFamily": "pinks", "occasion": ["everyday", "bridal"],
+    "brands": [{ "brandName": "Charlotte Tilbury", "productName": "Matte Revolution Blushed Pink", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" }, { "brandName": "MyGlamm", "productName": "LIT Liquid Matte Lipstick Rose Kiss", "price": 349, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/myglamm", "imageUrl": "" }] },
+
+  { "shadeId": "ls-003", "name": "Pink Taupe", "hexColor": "#C4A0A8", "finish": "matte", "undertone": "neutral", "colorFamily": "nudes", "occasion": ["everyday"],
+    "brands": [{ "brandName": "MAC", "productName": "Twig Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "Colorbar", "productName": "Matte Touch Lipstick Pink Taupe", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" }] },
+
+  { "shadeId": "ls-004", "name": "Rosy Mauve", "hexColor": "#C07898", "finish": "matte", "undertone": "cool", "colorFamily": "pinks", "occasion": ["everyday"],
+    "brands": [{ "brandName": "NARS", "productName": "Velvet Matte Lip Pencil Bettina", "price": 27, "currency": "USD", "buyUrl": "https://www.narscosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "ls-005", "name": "Peachy Keen", "hexColor": "#F4A882", "finish": "glossy", "undertone": "warm", "colorFamily": "pinks", "occasion": ["everyday"],
+    "brands": [{ "brandName": "Fenty Beauty", "productName": "Gloss Bomb Peach Bum", "price": 20, "currency": "USD", "buyUrl": "https://www.fentybeauty.com", "imageUrl": "" }, { "brandName": "Nykaa Cosmetics", "productName": "So Glossy! Lipstick Peachy Dream", "price": 299, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/nykaa-cosmetics", "imageUrl": "" }] },
+
+  { "shadeId": "ls-006", "name": "Rosewood", "hexColor": "#B87880", "finish": "satin", "undertone": "neutral", "colorFamily": "pinks", "occasion": ["everyday", "bridal"],
+    "brands": [{ "brandName": "Charlotte Tilbury", "productName": "Matte Revolution Glastonberry", "price": 36, "currency": "USD", "buyUrl": "https://www.charlottetilbury.com", "imageUrl": "" }, { "brandName": "Colorbar", "productName": "Matte Touch Lipstick Rosewood", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" }] },
+
+  { "shadeId": "ls-007", "name": "Mocha", "hexColor": "#8C5840", "finish": "matte", "undertone": "warm", "colorFamily": "browns", "occasion": ["everyday"],
+    "brands": [{ "brandName": "MAC", "productName": "Mocha Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "Mamaearth", "productName": "Moisture Matte Lipstick Mocha", "price": 249, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/mamaearth", "imageUrl": "" }] },
+
+  { "shadeId": "ls-008", "name": "Plum", "hexColor": "#5C2050", "finish": "matte", "undertone": "cool", "colorFamily": "berries", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "MAC", "productName": "Dark Side Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "Sugar Cosmetics", "productName": "Smudge Me Not Liquid Lipstick Plum The Trigger", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/sugar", "imageUrl": "" }] },
+
+  { "shadeId": "ls-009", "name": "Scarlet", "hexColor": "#D41E1E", "finish": "matte", "undertone": "warm", "colorFamily": "reds", "occasion": ["bold"],
+    "brands": [{ "brandName": "L'Oreal", "productName": "Rouge Signature Matte 113 I Don't", "price": 12, "currency": "USD", "buyUrl": "https://www.lorealparisusa.com", "imageUrl": "" }, { "brandName": "Lakme", "productName": "Absolute Mousse Lip Color Scarlet Surge", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/lakme/lipstick", "imageUrl": "" }] },
+
+  { "shadeId": "ls-010", "name": "Garnet", "hexColor": "#6E0028", "finish": "matte", "undertone": "cool", "colorFamily": "reds", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "YSL Beauty", "productName": "Pur Couture The Slim 09 Red Enigma", "price": 44, "currency": "USD", "buyUrl": "https://www.yslbeauty.com", "imageUrl": "" }, { "brandName": "Nykaa Cosmetics", "productName": "Powerpacked Matte Lipstick Deep Wine", "price": 249, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/nykaa-cosmetics", "imageUrl": "" }] },
+
+  { "shadeId": "mac-001", "name": "Ruby Woo", "hexColor": "#C0142C", "finish": "matte", "undertone": "cool", "colorFamily": "reds", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "MAC", "productName": "Ruby Woo Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "MAC India", "productName": "Ruby Woo Lipstick", "price": 1800, "currency": "INR", "buyUrl": "https://www.nykaa.com/mac-cosmetics/lipstick", "imageUrl": "" }] },
+
+  { "shadeId": "mac-002", "name": "Velvet Teddy", "hexColor": "#966C4A", "finish": "matte", "undertone": "neutral", "colorFamily": "nudes", "occasion": ["everyday"],
+    "brands": [{ "brandName": "MAC", "productName": "Velvet Teddy Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "MAC India", "productName": "Velvet Teddy Lipstick", "price": 1800, "currency": "INR", "buyUrl": "https://www.nykaa.com/mac-cosmetics/lipstick", "imageUrl": "" }] },
+
+  { "shadeId": "mac-003", "name": "Twig", "hexColor": "#A0786A", "finish": "satin", "undertone": "neutral", "colorFamily": "browns", "occasion": ["everyday"],
+    "brands": [{ "brandName": "MAC", "productName": "Twig Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "mac-004", "name": "Candy Yum-Yum", "hexColor": "#E83898", "finish": "matte", "undertone": "cool", "colorFamily": "pinks", "occasion": ["bold"],
+    "brands": [{ "brandName": "MAC", "productName": "Candy Yum-Yum Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "mac-005", "name": "Lady Danger", "hexColor": "#E03824", "finish": "matte", "undertone": "warm", "colorFamily": "reds", "occasion": ["bold"],
+    "brands": [{ "brandName": "MAC", "productName": "Lady Danger Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "Colorbar", "productName": "Matte Touch Lipstick Tangerine Tango", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" }] },
+
+  { "shadeId": "mac-006", "name": "Russian Red", "hexColor": "#B00018", "finish": "matte", "undertone": "cool", "colorFamily": "reds", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "MAC", "productName": "Russian Red Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "mac-007", "name": "Sin", "hexColor": "#581830", "finish": "satin", "undertone": "cool", "colorFamily": "berries", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "MAC", "productName": "Sin Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "mac-008", "name": "Rebel", "hexColor": "#6C1848", "finish": "satin", "undertone": "cool", "colorFamily": "berries", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "MAC", "productName": "Rebel Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "Sugar Cosmetics", "productName": "Smudge Me Not Liquid Lipstick Berry Blast", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/sugar", "imageUrl": "" }] },
+
+  { "shadeId": "mac-009", "name": "Heroine", "hexColor": "#7C28A0", "finish": "matte", "undertone": "cool", "colorFamily": "purples", "occasion": ["bold"],
+    "brands": [{ "brandName": "MAC", "productName": "Heroine Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "mac-010", "name": "Cyber", "hexColor": "#380844", "finish": "matte", "undertone": "cool", "colorFamily": "purples", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "MAC", "productName": "Cyber Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "mac-011", "name": "Chili", "hexColor": "#B43A28", "finish": "matte", "undertone": "warm", "colorFamily": "reds", "occasion": ["everyday", "bold"],
+    "brands": [{ "brandName": "MAC", "productName": "Chili Lipstick", "price": 22, "currency": "USD", "buyUrl": "https://www.maccosmetics.com", "imageUrl": "" }, { "brandName": "Lakme", "productName": "9 to 5 Primer Matte Brick Red", "price": 395, "currency": "INR", "buyUrl": "https://www.nykaa.com/lakme/lipstick", "imageUrl": "" }] },
+
+  { "shadeId": "lps-001", "name": "Bombshell", "hexColor": "#D42880", "finish": "glossy", "undertone": "cool", "colorFamily": "pinks", "occasion": ["bold"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Bombshell", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Nykaa Cosmetics", "productName": "So Matte! Lipstick Hot Pink", "price": 299, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/nykaa-cosmetics", "imageUrl": "" }] },
+
+  { "shadeId": "lps-002", "name": "Blackberry", "hexColor": "#3A0C2A", "finish": "matte", "undertone": "cool", "colorFamily": "berries", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Blackberry", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Chambor", "productName": "Extreme Wear Liquid Lip Blackberry", "price": 595, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/chambor", "imageUrl": "" }] },
+
+  { "shadeId": "lps-003", "name": "Fire Opal", "hexColor": "#C84820", "finish": "glossy", "undertone": "warm", "colorFamily": "reds", "occasion": ["bold"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Fire Opal", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }] },
+
+  { "shadeId": "lps-004", "name": "Mulled Wine", "hexColor": "#6C1A34", "finish": "matte", "undertone": "cool", "colorFamily": "berries", "occasion": ["evening"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Mulled Wine", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Sugar Cosmetics", "productName": "Smudge Me Not Liquid Lipstick Wine O Clock", "price": 499, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/sugar", "imageUrl": "" }] },
+
+  { "shadeId": "lps-005", "name": "Pomegranate", "hexColor": "#8C1C2C", "finish": "glossy", "undertone": "cool", "colorFamily": "berries", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Pomegranate", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Colorbar", "productName": "Velvet Matte Lipstick Pomegranate", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" }] },
+
+  { "shadeId": "lps-006", "name": "Purple Reign", "hexColor": "#6828A0", "finish": "matte", "undertone": "cool", "colorFamily": "purples", "occasion": ["bold"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Purple Reign", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Chambor", "productName": "Intense Matte Lip Colour Purple Reign", "price": 595, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/chambor", "imageUrl": "" }] },
+
+  { "shadeId": "lps-007", "name": "Razzberry", "hexColor": "#C82868", "finish": "glossy", "undertone": "cool", "colorFamily": "pinks", "occasion": ["bold", "everyday"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Razzberry", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "NYX Professional", "productName": "Butter Gloss Raspberry Sorbet", "price": 8, "currency": "USD", "buyUrl": "https://www.nyxcosmetics.com", "imageUrl": "" }] },
+
+  { "shadeId": "lps-008", "name": "Mauve Ice", "hexColor": "#B898A8", "finish": "sheer", "undertone": "cool", "colorFamily": "purples", "occasion": ["everyday"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Mauve Ice", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Colorbar", "productName": "Sinful Matte Lipstick Mauve Ice", "price": 350, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/colorbar", "imageUrl": "" }] },
+
+  { "shadeId": "lps-009", "name": "Nutmeg", "hexColor": "#9C6840", "finish": "matte", "undertone": "warm", "colorFamily": "browns", "occasion": ["everyday"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Nutmeg", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Mamaearth", "productName": "Moisture Matte Lipstick Nutmeg Brown", "price": 249, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/mamaearth", "imageUrl": "" }] },
+
+  { "shadeId": "lps-010", "name": "Heartbreaker", "hexColor": "#A82040", "finish": "matte", "undertone": "cool", "colorFamily": "reds", "occasion": ["bold", "evening"],
+    "brands": [{ "brandName": "SeneGence", "productName": "LipSense Heartbreaker", "price": 25, "currency": "USD", "buyUrl": "https://www.senegence.com", "imageUrl": "" }, { "brandName": "Nykaa Cosmetics", "productName": "Powerpacked Matte Lipstick Heartbreaker", "price": 249, "currency": "INR", "buyUrl": "https://www.nykaa.com/brand/nykaa-cosmetics", "imageUrl": "" }] }
 ]
