@@ -8,6 +8,7 @@ import BrandMatchPanel from "@/components/BrandMatchPanel";
 import CompareView from "@/components/CompareView";
 import SnapshotButton from "@/components/SnapshotButton";
 import PrivacyBadge from "@/components/PrivacyBadge";
+import MatchRating from "@/components/MatchRating";
 import { useCamera } from "@/hooks/useCamera";
 import { useShadeSelection } from "@/hooks/useShadeSelection";
 import type { ShadeData } from "@/types";
@@ -61,6 +62,10 @@ export default function TryOnPage() {
 
         {/* Floating controls — top right */}
         <div className="tryon-top-right-controls">
+          {/* Match Rating toggle */}
+          <MatchRating selectedShade={selectedShade} canvasRef={canvasRef} />
+
+          {/* Opacity / intensity slider toggle */}
           <button
             className="tryon-ctrl-btn"
             onClick={() => setShowOpacitySlider((v) => !v)}
